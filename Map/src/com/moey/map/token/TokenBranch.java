@@ -1,6 +1,4 @@
-package com.moey.map.parse;
-
-import sun.org.mozilla.javascript.Token;
+package com.moey.map.token;
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -15,7 +13,13 @@ import java.util.LinkedList;
 public class TokenBranch extends TokenNode {
     final private Collection<TokenNode> _nodes = new LinkedList<TokenNode>();
 
+    TokenBranch(TokenBranch parent) {
+        super(parent);
+    }
+
     void add(TokenNode node) {
         _nodes.add(node);
     }
+
+    public String toString() { return _nodes.toString(); }
 }

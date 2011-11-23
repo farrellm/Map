@@ -1,11 +1,11 @@
-package com.moey.map.parse;
+package com.moey.map.evaluate;
 
 /**
  * Created by IntelliJ IDEA.
  * User: mfarrell
- * Date: 11/22/11
- * Time: 9:27 PM
+ * Date: 11/23/11
+ * Time: 1:08 AM
  * To change this template use File | Settings | File Templates.
  */
-public class TokenLeaf extends TokenNode {
+public class Environment {
 }

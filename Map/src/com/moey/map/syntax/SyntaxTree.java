@@ -1,11 +1,12 @@
-package com.moey.map.parse;
+package com.moey.map.syntax;
 
 /**
  * Created by IntelliJ IDEA.
  * User: mfarrell
- * Date: 11/22/11
- * Time: 9:26 PM
+ * Date: 11/23/11
+ * Time: 12:52 AM
  * To change this template use File | Settings | File Templates.
  */
-public class TokenNode {
+public class SyntaxTree {
+
 }
