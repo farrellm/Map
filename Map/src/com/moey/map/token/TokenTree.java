@@ -1,5 +1,7 @@
 package com.moey.map.token;
 
+import com.moey.map.syntax.SyntaxSequence;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
@@ -48,7 +50,11 @@ public class TokenTree {
                 _cur.add(new TokenLeaf(_cur, token));
             }
         }
+    }
 
-        System.out.println(_root);
+    public String toString() { return _root.toString(); }
+
+    public SyntaxSequence build() {
+        return _root.buildForm(new SyntaxSequence());
     }
 }

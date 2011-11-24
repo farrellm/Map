@@ -9,6 +9,6 @@ import com.moey.map.evaluate.Environment;
  * Time: 12:53 AM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class SyntaxNode {
-    abstract SyntaxNode evaluate(Environment environment);
+public interface SyntaxNode {
+    SyntaxNode evaluate(Environment environment);
 }

@@ -1,5 +1,9 @@
 package com.moey.map.token;
 
+import com.moey.map.syntax.SyntaxNode;
+import com.moey.map.syntax.SyntaxValue;
+import com.moey.map.util.Symbol;
+
 /**
  * Created by IntelliJ IDEA.
  * User: mfarrell
@@ -18,4 +22,22 @@ public class TokenLeaf extends TokenNode {
     public String token() { return _token; }
 
     public String toString() { return _token; }
+
+    @Override
+    SyntaxNode build() {
+        try {
+            Integer i = new Integer(_token);
+            return new SyntaxValue(i);
+        } catch (NumberFormatException exc) {}
+
+        try {
+            Double d = new Double(_token);
+            return new SyntaxValue(d);
+        } catch (NumberFormatException exc) {}
+
+        if (_token.startsWith("\""))
+            return new SyntaxValue(_token.replaceAll("\"", ""));
+
+        return new SyntaxValue(new Symbol(_token));
+    }
 }

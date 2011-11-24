@@ -10,8 +10,8 @@ import java.util.Collection;
  * Time: 1:06 AM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class SyntaxForm extends SyntaxNode {
-    final private ArrayList<SyntaxNode> _args;
+public abstract class SyntaxForm implements SyntaxNode {
+    final protected ArrayList<SyntaxNode> _args;
 
     protected SyntaxForm()          { _args = new ArrayList<SyntaxNode>(); }
     protected SyntaxForm(int nArgs) { _args = new ArrayList<SyntaxNode>(nArgs); }

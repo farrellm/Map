@@ -1,5 +1,8 @@
 package com.moey.map.token;
 
+import com.moey.map.syntax.SyntaxForm;
+import com.moey.map.syntax.SyntaxNode;
+
 import java.util.Collection;
 import java.util.LinkedList;
 
@@ -15,6 +18,17 @@ public class TokenBranch extends TokenNode {
 
     TokenBranch(TokenBranch parent) {
         super(parent);
+    }
+
+    @Override
+    SyntaxNode build() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    SyntaxForm buildForm(SyntaxForm form) {
+        for (TokenNode node : _nodes)
+            form.add(node.build());
+        return form;
     }
 
     void add(TokenNode node) {

@@ -1,5 +1,6 @@
 package com.moey.map;
 
+import com.moey.map.syntax.SyntaxSequence;
 import com.moey.map.token.TokenTree;
 
 import java.io.BufferedReader;
@@ -20,9 +21,16 @@ public class Map {
         final BufferedReader bufferRead =
                 new BufferedReader(new InputStreamReader(System.in));
         while (true) {
-            TokenTree tree = new TokenTree();
-	        String code = bufferRead.readLine();
-            tree.parse(code);
+            TokenTree tokenTree = new TokenTree();
+            do {
+                String code = bufferRead.readLine();
+                if ("q".equals(code))
+                    break;
+                tokenTree.parse(code);
+            } while (! tokenTree.isReady());
+            System.out.println(tokenTree);
+
+            SyntaxSequence syntaxSequence = tokenTree.build();
         }
     }
 }
